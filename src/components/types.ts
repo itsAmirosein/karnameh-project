@@ -12,6 +12,8 @@ interface ProfileContent {
 
 export interface ButtonProps {
   title: string;
-  variant: "fill" | "outlined";
+  variant?: "fill" | "outlined";
   onClick: (value: React.MouseEvent<HTMLElement>) => void;
+  hasIcon?: boolean;
+  size?: "lg" | "md";
 }

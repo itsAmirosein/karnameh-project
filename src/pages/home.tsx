@@ -6,6 +6,7 @@ import { InitialState } from "redux/types";
 import Profile from "../components/profile";
 import { persianTranslate } from "dictionary/persianTranslate";
 import Button from "components/button";
+import ListItems from "components/listItems";
 
 function Home() {
   const { profile } = useSelector((state: InitialState) => state);
@@ -18,20 +19,26 @@ function Home() {
 
   return (
     <div>
-      <header className="border flex px-8">
-        <div className="w-1/2">
+      <header className="border flex px-8 py-4">
+        <div className="w-1/2 flex">
           <Profile
             profile={profile}
             icon={<IoCaretDown className="mx-4 mt-1" />}
           />
-          <Button title="smt" onClick={()=>{}} variant='outlined'/>
+          <Button
+            title={persianTranslate.home.newQuestion}
+            onClick={() => {}}
+            variant="fill"
+            hasIcon
+            size="md"
+          />
         </div>
         <div className="w-1/2  flex justify-end">
           {persianTranslate.home.questionList}
         </div>
       </header>
       <main>
-        
+        <ListItems />
       </main>
     </div>
   );
