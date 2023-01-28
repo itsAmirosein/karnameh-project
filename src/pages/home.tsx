@@ -7,16 +7,19 @@ import Profile from "../components/profile";
 import { persianTranslate } from "dictionary/persianTranslate";
 import Button from "components/button";
 import ListItems from "components/listItems";
+import CreateQuestionModal from "components/createQuestionModal";
 
 function Home() {
-  const { profile , questionsLists,answersLists } = useSelector((state: InitialState) => state);
+  const { profile, questionsLists, answersLists } = useSelector(
+    (state: InitialState) => state
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
       type: sagaActions.getDefaultData,
     });
   }, []);
-console.log(new Date(),'questionsLists');
+  console.log(new Date(), "questionsLists");
 
   return (
     <div className="font-Yekan ">
@@ -39,8 +42,15 @@ console.log(new Date(),'questionsLists');
         </div>
       </header>
       <main className="py-4 px-8">
-       {questionsLists?.map(item=> <ListItems key={item.ID} listItem={item} commentsLength={answersLists.length}/>)}
+        {questionsLists?.map((item) => (
+          <ListItems
+            key={item.ID}
+            listItem={item}
+            commentsLength={answersLists.length}
+          />
+        ))}
       </main>
+      <CreateQuestionModal />
     </div>
   );
 }
