@@ -4,17 +4,17 @@
       "name": "Nika",
       "Image": "https://en.wikipedia.org/wiki/Death_of_Nika_Shakarami#/media/File:Nika_Shakarami_photo.png"
     },
-    "questionLists": [
+    "questionsLists": [
       {
         "personImage": "https://images.wsj.net/im-625630?width=1920",
         "title": "can we win ?",
         "text": "can we win?",
         "questionImage": "",
-        "date": "",
+        "date": "Sat Jan 28 2023 17:18:42 GMT+0330 (Iran Standard Time)",
         "ID": "1"
       }
     ],
-    "answerLists": [
+    "answersLists": [
       {
         "responerImage": "https://cdn.unitycms.io/images/DLV0FQASKQr8MVEOTlb2d1.png?op=ocroped&val=1200,1200,1000,1000,0,0&sum=LMOrpyWzAmI",
         "responderName": "hadis",

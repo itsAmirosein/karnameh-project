@@ -9,13 +9,14 @@ import Button from "components/button";
 import ListItems from "components/listItems";
 
 function Home() {
-  const { profile } = useSelector((state: InitialState) => state);
+  const { profile , questionsLists,answersLists } = useSelector((state: InitialState) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
       type: sagaActions.getDefaultData,
     });
   }, []);
+console.log(new Date(),'questionsLists');
 
   return (
     <div>
@@ -37,8 +38,8 @@ function Home() {
           {persianTranslate.home.questionList}
         </div>
       </header>
-      <main>
-        <ListItems />
+      <main className="p-8">
+       {questionsLists?.map(item=> <ListItems key={item.ID} listItem={item} commentsLength={answersLists.length}/>)}
       </main>
     </div>
   );

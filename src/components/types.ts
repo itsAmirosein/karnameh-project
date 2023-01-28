@@ -17,3 +17,17 @@ export interface ButtonProps {
   hasIcon?: boolean;
   size?: "lg" | "md";
 }
+
+export interface ListItemProps {
+  listItem: ListItem;
+  commentsLength:number
+}
+
+interface ListItem {
+  personImage: string;
+  title: string;
+  text: string;
+  questionImage: string;
+  date: Date;
+  ID: number;
+}

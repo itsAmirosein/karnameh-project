@@ -12,5 +12,7 @@ function handleDefaultData(
   state: InitialState,
   action: ActionTypes
 ): InitialState {
+  console.log(action.payload,'pa');
+  
   return action.payload;
 }
