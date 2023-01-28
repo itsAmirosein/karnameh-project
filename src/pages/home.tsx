@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { sagaActions } from "redux/actions";
 import { InitialState } from "redux/types";
 import Profile from "../components/profile";
-import { API } from "../services/api";
-import { GetData } from "../services/apiCall";
+import { persianTranslate } from "dictionary/persianTranslate";
 
 function Home() {
   const { profile } = useSelector((state: InitialState) => state);
@@ -25,9 +24,13 @@ function Home() {
             icon={<IoCaretDown className="mx-4 mt-1" />}
           />
         </div>
-        <div className="w-1/2 border flex justify-end">item title</div>
+        <div className="w-1/2  flex justify-end">
+          {persianTranslate.home.questionList}
+        </div>
       </header>
-      <main>main</main>
+      <main>
+        
+      </main>
     </div>
   );
 }
