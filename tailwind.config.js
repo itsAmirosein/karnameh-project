@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       colors:{
         'Green':'#27AE60'
+      },
+      fontFamily:{
+        Yekan:'Yekan'
       }
     },
   },

@@ -3,6 +3,7 @@ export const persianTranslate = {
     questionList: "لیست سوالات",
     newQuestion: "سوال جدید",
     Date:"تاریخ",
-    hour:"ساعت"
+    hour:"ساعت",
+    showDetails:"مشاهده جزییات"
   },
 };

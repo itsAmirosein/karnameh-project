@@ -19,7 +19,7 @@ function Home() {
 console.log(new Date(),'questionsLists');
 
   return (
-    <div>
+    <div className="font-Yekan ">
       <header className="border flex px-8 py-4">
         <div className="w-1/2 flex">
           <Profile
@@ -38,7 +38,7 @@ console.log(new Date(),'questionsLists');
           {persianTranslate.home.questionList}
         </div>
       </header>
-      <main className="p-8">
+      <main className="py-4 px-8">
        {questionsLists?.map(item=> <ListItems key={item.ID} listItem={item} commentsLength={answersLists.length}/>)}
       </main>
     </div>
