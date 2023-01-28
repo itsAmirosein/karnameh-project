@@ -5,6 +5,7 @@ import { sagaActions } from "redux/actions";
 import { InitialState } from "redux/types";
 import Profile from "../components/profile";
 import { persianTranslate } from "dictionary/persianTranslate";
+import Button from "components/button";
 
 function Home() {
   const { profile } = useSelector((state: InitialState) => state);
@@ -23,6 +24,7 @@ function Home() {
             profile={profile}
             icon={<IoCaretDown className="mx-4 mt-1" />}
           />
+          <Button title="smt" onClick={()=>{}} variant='outlined'/>
         </div>
         <div className="w-1/2  flex justify-end">
           {persianTranslate.home.questionList}
