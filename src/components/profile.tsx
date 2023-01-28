@@ -5,8 +5,8 @@ function Profile({ profile, icon }: ProfileProps) {
   return (
     <div className="flex items-center">
       {icon}
-      <div className="mx-4">{profile.fullName}</div>
-      <img src={profile.image} className='rounded-full' />
+      <div className="mx-4">{profile.name}</div>
+      <img src={profile.image} className="rounded-full" />
     </div>
   );
 }

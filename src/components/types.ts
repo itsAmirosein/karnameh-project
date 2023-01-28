@@ -6,6 +6,6 @@ export interface ProfileProps {
 }
 
 interface ProfileContent {
-  fullName: string;
+  name: string;
   image: string;
 }
