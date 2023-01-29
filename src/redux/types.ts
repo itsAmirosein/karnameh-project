@@ -2,6 +2,8 @@ export interface InitialState {
   profile: ProfileType;
   questionsLists: QuestionsType[];
   answersLists: AnswersType[];
+  modalVisibility:boolean,
+  modalData:ModalDataType
 }
 
 export interface ProfileType {
@@ -29,4 +31,9 @@ export interface AnswersType {
 export interface ActionTypes{
     type :string, 
     payload:any
+}
+
+interface ModalDataType{
+  subject:string;
+  description:string
 }

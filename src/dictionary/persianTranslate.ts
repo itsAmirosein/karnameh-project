@@ -4,6 +4,11 @@ export const persianTranslate = {
     newQuestion: "سوال جدید",
     Date:"تاریخ",
     hour:"ساعت",
-    showDetails:"مشاهده جزییات"
+    showDetails:"مشاهده جزییات",
+    createNewQuestion:'ایجاد سوال جدید',
+    createQuestion:'ایجاد سوال',
+    cancel:'انصراف',
+    subject:'موضوع',
+    questionText:'متن سوال'
   },
 };

@@ -1,12 +1,12 @@
 {
   "data": {
     "profile":{
-      "name": "Nika",
-      "Image": "https://en.wikipedia.org/wiki/Death_of_Nika_Shakarami#/media/File:Nika_Shakarami_photo.png"
+      "name": "some guy",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWZGgZdWZSK7NBOIoLxc3gbBPtRoXEYF9f-g&usqp=CAU"
     },
     "questionsLists": [
       {
-        "personImage": "https://images.wsj.net/im-625630?width=1920",
+        "personImage": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp",
         "title": "can we win ?",
         "text": "can we win?",
         "questionImage": "",
@@ -14,7 +14,7 @@
         "ID": "1"
       },
       {
-        "personImage": "https://images.wsj.net/im-625630?width=1920",
+        "personImage": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp",
         "title": "can we win ?",
         "text": "can we win?",
         "questionImage": "",
@@ -27,7 +27,7 @@
         "responerImage": "https://cdn.unitycms.io/images/DLV0FQASKQr8MVEOTlb2d1.png?op=ocroped&val=1200,1200,1000,1000,0,0&sum=LMOrpyWzAmI",
         "responderName": "hadis",
         "text": "yes!",
-        "Like": "85000000",
+        "like": "85000000",
         "dislike": "0",
         "ID": "1"
       }

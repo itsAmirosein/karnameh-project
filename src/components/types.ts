@@ -12,7 +12,7 @@ interface ProfileContent {
 
 export interface ButtonProps {
   title: string;
-  variant?: "fill" | "outlined";
+  variant?: "fill" | "outlined"|'plain';
   onClick: (value: React.MouseEvent<HTMLElement>) => void;
   hasIcon?: boolean;
   size?: "lg" | "md";
@@ -30,4 +30,13 @@ interface ListItem {
   questionImage: string;
   date: Date;
   ID: number;
+}
+
+export interface ModalProps{
+  title:string,
+  onClose:()=>void,
+  onConfirm:(e:React.MouseEvent<HTMLElement, MouseEvent>)=>void,
+  onCancel:(e:React.MouseEvent<HTMLElement, MouseEvent>)=>void,
+  content:ReactElement,
+
 }

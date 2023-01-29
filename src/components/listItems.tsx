@@ -14,13 +14,13 @@ function ListItems({ listItem, commentsLength }: ListItemProps) {
       date: `${convertedDate.getDate()}/${
         convertedDate.getMonth() + 1
       }/${convertedDate.getFullYear()}`,
-      hour: `${convertedDate.getHours()} : ${convertedDate.getMinutes()}`,
+      hour: `${convertedDate.getMinutes()} : ${convertedDate.getHours()}`,
     };
   };
 
   return (
-    <div className="border rounded-md my-8 ">
-      <div className="border flex justify-between px-8 py-2">
+    <div className="border rounded-xl my-8 shadow-md">
+      <div className="border flex justify-between px-8 py-2 bg-white">
         <div className="flex items-center">
           <div className="flex items-center pr-4">
             {commentsLength}
@@ -37,10 +37,10 @@ function ListItems({ listItem, commentsLength }: ListItemProps) {
         </div>
         <div className=" flex items-center">
           <div className="mx-4">{title}</div>
-          <img src={personImage} className="w-[32px] h-[32px] rounded-md" />
+          <img src={personImage} className="w-[32px] h-[32px] rounded-xl" />
         </div>
       </div>
-      <div className="border px-8 py-4">
+      <div className="border px-8 py-4 bg-smook-2">
         <div className="py-1 text-right">{text}</div>
         <div className="py-1">
           <Button
