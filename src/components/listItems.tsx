@@ -4,7 +4,7 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { persianTranslate } from "dictionary/persianTranslate";
 import Button from "./button";
 
-function ListItems({ listItem, commentsLength }: ListItemProps) {
+function ListItems({ listItem, commentsLength, onClick }: ListItemProps) {
   const { date, personImage, questionImage, text, title } = listItem;
   console.log(new Date(date).getDate(), "title");
 
@@ -44,7 +44,7 @@ function ListItems({ listItem, commentsLength }: ListItemProps) {
         <div className="py-1 text-right">{text}</div>
         <div className="py-1">
           <Button
-            onClick={() => {}}
+            onClick={() => onClick(listItem.ID)}
             title={persianTranslate.home.showDetails}
             variant="outlined"
           />

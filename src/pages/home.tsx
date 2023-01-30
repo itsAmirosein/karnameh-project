@@ -14,10 +14,13 @@ import {
   setModalSubject,
   modalSubmit,
 } from "redux/reducer";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const { profile, questionsLists, answersLists, modalVisibility, modalData } =
     useSelector((state: InitialState) => state);
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -55,6 +58,10 @@ function Home() {
     dispatch(setModalDescription(e.target.value));
   };
 
+  const handleOnShowDetailsClick = (ID: number) => {
+    navigate(`/${ID}`)
+  };
+
   const modalContent = (
     <div className="text-right">
       <div className="pb-4">{persianTranslate.home.subject}</div>
@@ -74,27 +81,10 @@ function Home() {
 
   return (
     <div className="font-Yekan ">
-      <header className="border flex items-center px-8 py-4">
-        <div className="w-1/2 flex ">
-          <Profile
-            profile={profile}
-            icon={<IoCaretDown className="mr-2 mt-1" />}
-          />
-          <Button
-            title={persianTranslate.home.newQuestion}
-            onClick={handleOnNewQuestionClick}
-            variant="fill"
-            hasIcon
-            size="md"
-          />
-        </div>
-        <div className="w-1/2 text-[24px] font-bold flex justify-end">
-          {persianTranslate.home.questionList}
-        </div>
-      </header>
       <main className="py-4 px-8 bg-smook-1 h-screen">
         {questionsLists?.map((item) => (
           <ListItems
+            onClick={handleOnShowDetailsClick}
             key={item.ID}
             listItem={item}
             commentsLength={answersLists.length}

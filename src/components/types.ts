@@ -20,7 +20,8 @@ export interface ButtonProps {
 
 export interface ListItemProps {
   listItem: ListItem;
-  commentsLength:number
+  commentsLength:number;
+  onClick:(ID:number)=>void
 }
 
 interface ListItem {
@@ -39,4 +40,8 @@ export interface ModalProps{
   onCancel:(e:React.MouseEvent<HTMLElement, MouseEvent>)=>void,
   content:ReactElement,
 
+}
+
+export interface HeaderProps{
+  newQuestionClick:()=>void
 }
