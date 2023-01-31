@@ -14,6 +14,7 @@ const initialState: InitialState = {
     subject: "",
     description: "",
   },
+  param:undefined
 };
 
 export const mainSlice = createSlice({
@@ -27,5 +28,6 @@ export const {
   setModalState,
   setModalDescription,
   setModalSubject,
-  modalSubmit
+  modalSubmit,
+  setParam
 } = mainSlice.actions;

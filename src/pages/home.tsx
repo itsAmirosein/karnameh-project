@@ -13,12 +13,14 @@ import {
   setModalDescription,
   setModalSubject,
   modalSubmit,
+  setParam
 } from "redux/reducer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Home() {
   const { profile, questionsLists, answersLists, modalVisibility, modalData } =
     useSelector((state: InitialState) => state);
+    const params = useParams();
 
   const navigate = useNavigate();
 
@@ -43,10 +45,6 @@ function Home() {
     dispatch(setModalState(false));
   };
 
-  const handleOnNewQuestionClick = () => {
-    dispatch(setModalState(true));
-  };
-
   const handleOnModalSubjectChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -59,6 +57,7 @@ function Home() {
   };
 
   const handleOnShowDetailsClick = (ID: number) => {
+    dispatch(setParam(+ID))
     navigate(`/${ID}`)
   };
 
@@ -84,6 +83,7 @@ function Home() {
       <main className="py-4 px-8 bg-smook-1 h-screen">
         {questionsLists?.map((item) => (
           <ListItems
+          questionCart
             onClick={handleOnShowDetailsClick}
             key={item.ID}
             listItem={item}

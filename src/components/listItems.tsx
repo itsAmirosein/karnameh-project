@@ -4,9 +4,13 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { persianTranslate } from "dictionary/persianTranslate";
 import Button from "./button";
 
-function ListItems({ listItem, commentsLength, onClick }: ListItemProps) {
-  const { date, personImage, questionImage, text, title } = listItem;
-  console.log(new Date(date).getDate(), "title");
+function ListItems({
+  listItem,
+  commentsLength,
+  onClick,
+  questionCart,
+}: ListItemProps) {
+  const { date, personImage, questionImage, text, title ,disLiske,like,likeOrDislikeClick,name} = listItem;
 
   const q_date = () => {
     const convertedDate = new Date(date);
@@ -22,9 +26,19 @@ function ListItems({ listItem, commentsLength, onClick }: ListItemProps) {
     <div className="border rounded-xl my-8 shadow-md">
       <div className="border flex justify-between px-8 py-2 bg-white">
         <div className="flex items-center">
-          <div className="flex items-center pr-4">
-            {commentsLength}
-            <FaRegCommentDots className=" mx-1" />
+          <div className="flex items-center pr-4 justify-between">
+            {questionCart ? (
+              <>
+                {commentsLength}
+                <FaRegCommentDots className=" mx-1" />
+              </>
+            ) : (
+              <>
+              <div>
+                {like}
+              </div>
+              </>
+            )}
           </div>
           <div className="px-2 border-r items-center ">
             {`${persianTranslate.home.Date} : `}
@@ -42,13 +56,15 @@ function ListItems({ listItem, commentsLength, onClick }: ListItemProps) {
       </div>
       <div className="border px-8 py-4 bg-smook-2">
         <div className="py-1 text-right">{text}</div>
-        <div className="py-1">
-          <Button
-            onClick={() => onClick(listItem.ID)}
-            title={persianTranslate.home.showDetails}
-            variant="outlined"
-          />
-        </div>
+        {questionCart && (
+          <div className="py-1">
+            <Button
+              onClick={() => onClick && onClick(listItem.ID)}
+              title={persianTranslate.home.showDetails}
+              variant="outlined"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

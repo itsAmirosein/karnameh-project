@@ -6,6 +6,7 @@ export const ACTIONS = {
   setModalSubject: handleModalSubject,
   setModalDescription: handleModalDescription,
   modalSubmit: handleModalSubmit,
+  setParam: handleParam,
 };
 
 export const sagaActions = {
@@ -38,7 +39,11 @@ function handleModalSubmit(state: InitialState) {
     ID: state.questionsLists.length + 1,
   };
   state.questionsLists.push(newQuestion);
-  state.modalData.description = ""
-  state.modalData.subject = ""
+  state.modalData.description = "";
+  state.modalData.subject = "";
   state.modalVisibility = false;
+}
+
+function handleParam(state: InitialState, action: ActionTypes) {
+  state.param = action.payload;
 }

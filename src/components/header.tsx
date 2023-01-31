@@ -1,11 +1,15 @@
 import { persianTranslate } from "dictionary/persianTranslate";
 import React from "react";
 import { IoCaretDown } from "react-icons/io5";
+import { useParams } from "react-router-dom";
 import Button from "./button";
 import Profile from "./profile";
 import { HeaderProps } from "./types";
 
-function Header({newQuestionClick}:HeaderProps) {
+function Header({newQuestionClick,profile,title}:HeaderProps) {
+
+const params = useParams()
+
   return (
     <header className="border flex items-center px-8 py-4">
       <div className="w-1/2 flex ">

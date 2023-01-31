@@ -20,17 +20,22 @@ export interface ButtonProps {
 
 export interface ListItemProps {
   listItem: ListItem;
-  commentsLength:number;
-  onClick:(ID:number)=>void
+  commentsLength?:number;
+  onClick?:(ID:number)=>void,
+  questionCart:boolean
 }
 
 interface ListItem {
   personImage: string;
-  title: string;
+  title?: string;
+  name?:string
   text: string;
   questionImage: string;
   date: Date;
   ID: number;
+  like?:number
+  disLiske?:number
+  likeOrDislikeClick?:(value:boolean)=>void
 }
 
 export interface ModalProps{
@@ -43,5 +48,10 @@ export interface ModalProps{
 }
 
 export interface HeaderProps{
-  newQuestionClick:()=>void
+  newQuestionClick:()=>void,
+  title:string
+  profile:{
+    name:string,
+    image:string
+  }
 }

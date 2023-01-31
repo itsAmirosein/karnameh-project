@@ -2,8 +2,9 @@ export interface InitialState {
   profile: ProfileType;
   questionsLists: QuestionsType[];
   answersLists: AnswersType[];
-  modalVisibility:boolean,
-  modalData:ModalDataType
+  modalVisibility: boolean;
+  modalData: ModalDataType;
+  param?: number;
 }
 
 export interface ProfileType {
@@ -28,12 +29,12 @@ export interface AnswersType {
   ID: number;
 }
 
-export interface ActionTypes{
-    type :string, 
-    payload:any
+export interface ActionTypes {
+  type: string;
+  payload: any;
 }
 
-interface ModalDataType{
-  subject:string;
-  description:string
+interface ModalDataType {
+  subject: string;
+  description: string;
 }
