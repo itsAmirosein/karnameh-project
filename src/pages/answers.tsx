@@ -24,6 +24,9 @@ function Answers() {
       });
     }
   }, [questionsLists, answersLists]);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   const questionItem = questionsLists.find((item) => +item.ID === +param);
 

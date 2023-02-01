@@ -10,6 +10,36 @@
         "Q_ID": 1,
         "ID": 1,
         "date": "Wed Feb 01 2023 13:57:42 GMT+0330"
+      },
+      {
+        "date": "2023-02-01T16:19:13.050Z",
+        "dislike": 0,
+        "like": 0,
+        "name": "kian hosseini",
+        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7j9IDpZsbq4HghrNPneZustxYupRgrt0oQ&usqp=CAU",
+        "text": "wet",
+        "ID": 2,
+        "Q_ID": 1
+      },
+      {
+        "date": "2023-02-01T16:19:20.345Z",
+        "dislike": 2,
+        "like": 2,
+        "name": "kian hosseini",
+        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7j9IDpZsbq4HghrNPneZustxYupRgrt0oQ&usqp=CAU",
+        "text": "ss",
+        "ID": 3,
+        "Q_ID": 4
+      },
+      {
+        "date": "2023-02-01T16:37:12.342Z",
+        "dislike": 0,
+        "like": 0,
+        "name": "kian hosseini",
+        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7j9IDpZsbq4HghrNPneZustxYupRgrt0oQ&usqp=CAU",
+        "text": "jkn",
+        "ID": 4,
+        "Q_ID": 2
       }
     ],
     "profile": {
