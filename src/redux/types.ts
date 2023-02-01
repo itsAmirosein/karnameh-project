@@ -16,17 +16,19 @@ export interface QuestionsType {
   personImage: string;
   title: string;
   text: string;
-  questionImage: string;
   date: Date;
   ID: number;
 }
 export interface AnswersType {
-  responerImage: string;
-  responderName: string;
+  personImage: string;
+  name: string;
   text: string;
-  Like: number;
+  like: number;
   dislike: number;
+  Q_ID:number
   ID: number;
+  date: Date;
+
 }
 
 export interface ActionTypes {

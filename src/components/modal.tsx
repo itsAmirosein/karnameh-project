@@ -1,5 +1,4 @@
 import { ModalProps } from "./types";
-import { FaTimes } from "react-icons/fa";
 import Button from "./button";
 import { persianTranslate } from "dictionary/persianTranslate";
 
@@ -8,8 +7,8 @@ function Modal({ content, onCancel, onClose, onConfirm, title }: ModalProps) {
     <div className="w-full border h-full absolute top-0 left-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
       <div className="w-[700px] h-[440px] bg-white rounded-lg">
         <div className="border-b flex justify-between items-center p-4">
-          <div className="flex items-center">
-            <FaTimes onClick={onClose} className='cursor-pointer' />
+          <div className="flex items-center ">
+            <img src='/assets/close.png'  onClick={onClose} className='cursor-pointer' />
           </div>
           <div className="flex items-center">{title}</div>
         </div>

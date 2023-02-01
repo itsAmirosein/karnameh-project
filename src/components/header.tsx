@@ -1,6 +1,5 @@
 import { persianTranslate } from "dictionary/persianTranslate";
 import React from "react";
-import { IoCaretDown } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 import Button from "./button";
 import Profile from "./profile";
@@ -15,13 +14,13 @@ const params = useParams()
       <div className="w-1/2 flex ">
         <Profile
           profile={profile}
-          icon={<IoCaretDown className="mr-2 mt-1" />}
+          icon={<img src="/assets/Arrow-down.png" className="mr-2 mt-1" />}
         />
         <Button
           title={persianTranslate.home.newQuestion}
           onClick={newQuestionClick}
           variant="fill"
-          hasIcon
+          icon={<img src='/assets/Plus.png' />}
           size="md"
         />
       </div>

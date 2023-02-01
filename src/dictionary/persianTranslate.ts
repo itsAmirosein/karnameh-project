@@ -9,6 +9,7 @@ export const persianTranslate = {
     createQuestion:'ایجاد سوال',
     cancel:'انصراف',
     subject:'موضوع',
-    questionText:'متن سوال'
+    questionText:'متن سوال',
+    answers:'پاسخ ها'
   },
 };

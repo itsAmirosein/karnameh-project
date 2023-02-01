@@ -7,10 +7,12 @@ export const ACTIONS = {
   setModalDescription: handleModalDescription,
   modalSubmit: handleModalSubmit,
   setParam: handleParam,
+  setLikeOrDislike:handleLikeOrDislike
 };
 
 export const sagaActions = {
   getDefaultData: "GET_DEFAULT_DATA",
+  setLikeOrDislikeToServer:'SET_LIKE_OR_ISLIKE_TO_SERVER',
 };
 
 function handleDefaultData(state: InitialState, action: ActionTypes) {
@@ -33,7 +35,6 @@ function handleModalSubmit(state: InitialState) {
   const newQuestion: QuestionsType = {
     title: state.modalData.subject,
     personImage: state.profile.image,
-    questionImage: "",
     text: state.modalData.description,
     date: new Date(),
     ID: state.questionsLists.length + 1,
@@ -46,4 +47,7 @@ function handleModalSubmit(state: InitialState) {
 
 function handleParam(state: InitialState, action: ActionTypes) {
   state.param = action.payload;
+}
+function handleLikeOrDislike(state: InitialState, action: ActionTypes) {
+ return action.payload 
 }

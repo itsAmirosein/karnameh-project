@@ -29,5 +29,6 @@ export const {
   setModalDescription,
   setModalSubject,
   modalSubmit,
-  setParam
+  setParam,
+  setLikeOrDislike
 } = mainSlice.actions;

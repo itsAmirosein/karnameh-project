@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
-import { IoCaretDown } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { sagaActions } from "redux/actions";
 import { InitialState } from "redux/types";
-import Profile from "../components/profile";
-import { persianTranslate } from "dictionary/persianTranslate";
-import Button from "components/button";
+  import { persianTranslate } from "dictionary/persianTranslate";
 import ListItems from "components/listItems";
 import Modal from "components/modal";
 import {
@@ -84,7 +81,7 @@ function Home() {
         {questionsLists?.map((item) => (
           <ListItems
           questionCart
-            onClick={handleOnShowDetailsClick}
+          onMoreDetailsClick={handleOnShowDetailsClick}
             key={item.ID}
             listItem={item}
             commentsLength={answersLists.length}
