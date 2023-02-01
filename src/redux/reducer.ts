@@ -14,7 +14,6 @@ const initialState: InitialState = {
     subject: "",
     description: "",
   },
-  param:undefined,
   newAnswerText:''
 };
 
@@ -30,7 +29,6 @@ export const {
   setModalDescription,
   setModalSubject,
   modalSubmit,
-  setParam,
   setLikeOrDislike,
   setNewAnswer,
   setAnswerText

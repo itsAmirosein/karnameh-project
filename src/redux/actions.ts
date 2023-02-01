@@ -6,7 +6,6 @@ export const ACTIONS = {
   setModalSubject: handleModalSubject,
   setModalDescription: handleModalDescription,
   modalSubmit: handleModalSubmit,
-  setParam: handleParam,
   setLikeOrDislike: handleLikeOrDislike,
   setAnswerText: handleAnswertext,
   setNewAnswer: handleNewAnswer,
@@ -40,10 +39,6 @@ function handleModalSubmit(state: InitialState, action: ActionTypes) {
   state.modalData.description = "";
   state.modalData.subject = "";
   state.modalVisibility = false;
-}
-
-function handleParam(state: InitialState, action: ActionTypes) {
-  state.param = action.payload;
 }
 
 function handleAnswertext(state: InitialState, action: ActionTypes) {

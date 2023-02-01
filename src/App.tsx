@@ -1,5 +1,11 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, useParams, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useParams,
+  useNavigate,
+} from "react-router-dom";
 import Home from "pages/home";
 import Answers from "pages/answers";
 import Header from "components/header";
@@ -10,7 +16,6 @@ import { setModalState } from "redux/reducer";
 function App() {
   const { profile } = useSelector((state: InitialState) => state);
   const dispatch = useDispatch();
-
   const handleOnNewQuestionClick = () => {
     dispatch(setModalState(true));
   };
@@ -18,7 +23,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header profile={profile} newQuestionClick={handleOnNewQuestionClick} title={''} />
+        <Header
+          profile={profile}
+          newQuestionClick={handleOnNewQuestionClick}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:ID" element={<Answers />} />

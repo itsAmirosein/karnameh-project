@@ -4,7 +4,6 @@ export interface InitialState {
   answersLists: AnswersType[];
   modalVisibility: boolean;
   modalData: ModalDataType;
-  param?: number;
   newAnswerText?:string
 }
 

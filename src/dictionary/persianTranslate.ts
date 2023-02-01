@@ -16,6 +16,8 @@ export const persianTranslate = {
     submitYourAnswer:'پاسخ خود را ثبت کنید',
     writeYourAnswer:'پاسخ خود را بنویسید',
     asnwerText:'... متن پاسخ',
-    sendAnswer:"ارسال پاسخ"
+    sendAnswer:"ارسال پاسخ",
+    answerDetails:'جزییات سوال',
+    errorTextForTextarea:'محل قرارگیری راهنمای خطا'
   }
 };

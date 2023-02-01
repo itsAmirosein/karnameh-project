@@ -4,21 +4,30 @@ import { persianTranslate } from "dictionary/persianTranslate";
 import { useDispatch, useSelector } from "react-redux";
 import { sagaActions } from "redux/actions";
 import { InitialState } from "redux/types";
-import {setAnswerText} from 'redux/reducer'
+import { setAnswerText } from "redux/reducer";
+import { useEffect } from "react";
 
 function Answers() {
-  const { questionsLists, param, answersLists,newAnswerText } = useSelector(
+  const { questionsLists, answersLists, newAnswerText } = useSelector(
     (state: InitialState) => state
   );
   const dispatch = useDispatch();
-
-  const questionItem = questionsLists.find(
-    (item) => param && +item.ID === +param
+  const param = window.location.pathname.slice(
+    1,
+    window.location.pathname.length
   );
 
-  const filteredAnswers = answersLists.filter(
-    (item) => param && +item.Q_ID === +param
-  );
+  useEffect(() => {
+    if (questionsLists.length === 0 && answersLists.length === 0) {
+      dispatch({
+        type: sagaActions.getDefaultData,
+      });
+    }
+  }, [questionsLists, answersLists]);
+
+  const questionItem = questionsLists.find((item) => +item.ID === +param);
+
+  const filteredAnswers = answersLists.filter((item) => +item.Q_ID === +param);
 
   const handleOnReactionClick = (ID: number, value: boolean) => {
     dispatch({
@@ -46,18 +55,21 @@ function Answers() {
           <ListItems
             questionCart
             listItem={questionItem}
-            commentsLength={answersLists.length}
+            commentsLength={filteredAnswers.length}
           />
         )}
-        <div className="text-right font-bold text-[24px]">
-          {persianTranslate.answers.answers}
-        </div>
+        {filteredAnswers.length > 0 && (
+          <div className="text-right font-bold text-[24px]">
+            {persianTranslate.answers.answers}
+          </div>
+        )}
         <div>
           {filteredAnswers.map((item) => (
             <ListItems
               listItem={item}
               questionCart={false}
               onlikeOrDislikeClick={handleOnReactionClick}
+              key={item.Q_ID}
             />
           ))}
         </div>
@@ -74,12 +86,14 @@ function Answers() {
             onChange={handleNewAnswertext}
             value={newAnswerText}
           />
+          <div className="mb-4 text-red-500 text-[10px]">
+            {persianTranslate.answers.errorTextForTextarea}
+          </div>
           <Button
             title={persianTranslate.answers.sendAnswer}
             onClick={handleSendAnswerClick}
             variant="fill"
             size={"lg"}
-
           />
         </div>
       </main>

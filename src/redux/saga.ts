@@ -3,7 +3,12 @@ import { API } from "services/api";
 import { GetData, LikeOrDislik } from "services/apiCall";
 import { sagaActions } from "./actions";
 import { ActionTypes, AnswersType, InitialState, QuestionsType } from "./types";
-import { setNewAnswer, setDefaultData, setLikeOrDislike, modalSubmit } from "./reducer";
+import {
+  setNewAnswer,
+  setDefaultData,
+  setLikeOrDislike,
+  modalSubmit,
+} from "./reducer";
 import produce from "immer";
 
 // const { setDefaultData ,setLikeOrDislike} = mainSlice.actions;
@@ -42,6 +47,7 @@ function* setLikeOrDislikeToServerApiCall(action: ActionTypes) {
 function* newAnswerToServerApiCall(action: ActionTypes) {
   try {
     const oldState: InitialState = yield select((state: InitialState) => state);
+    console.log(window.location.pathname, "saga");
     const nextState = produce(oldState, (draftState) => {
       const newAnswer: AnswersType = {
         date: new Date(),
@@ -51,7 +57,10 @@ function* newAnswerToServerApiCall(action: ActionTypes) {
         personImage: draftState.profile.image,
         text: action.payload,
         ID: draftState.answersLists.length + 1,
-        Q_ID: draftState?.param as number,
+        Q_ID: +window.location.pathname.slice(
+          1,
+          window.location.pathname.length
+        ),
       };
       draftState.answersLists.push(newAnswer);
     });

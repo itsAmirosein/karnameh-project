@@ -7,7 +7,7 @@ import logger from 'redux-logger'
 const sagaMiddleware = createSagaMiddleware()
 export const store  = configureStore({
     reducer: mainSlice.reducer,
-    middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware,logger),
+    middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
 }) 
 
 sagaMiddleware.run(saga)

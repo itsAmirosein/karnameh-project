@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 export interface ProfileProps {
   profile: ProfileContent;
   icon?: ReactElement;
+  onProfileImageClick?:()=>void
 }
 
 interface ProfileContent {
@@ -49,7 +50,6 @@ export interface ModalProps {
 
 export interface HeaderProps {
   newQuestionClick: () => void;
-  title: string;
   profile: {
     name: string;
     image: string;

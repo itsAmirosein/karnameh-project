@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sagaActions } from "redux/actions";
 import { InitialState } from "redux/types";
@@ -10,18 +10,17 @@ import {
   setModalDescription,
   setModalSubject,
   modalSubmit,
-  setParam,
 } from "redux/reducer";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Home() {
   const { profile, questionsLists, answersLists, modalVisibility, modalData } =
     useSelector((state: InitialState) => state);
-  const params = useParams();
 
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch({
       type: sagaActions.getDefaultData,
@@ -56,8 +55,11 @@ function Home() {
   };
 
   const handleOnShowDetailsClick = (ID: number) => {
-    dispatch(setParam(+ID));
     navigate(`/${ID}`);
+  };
+
+  const answerCommentsCount = (ID: number) => {
+    return answersLists.filter((item) => +item.Q_ID === ID).length;
   };
 
   const modalContent = (
@@ -86,7 +88,7 @@ function Home() {
             onMoreDetailsClick={handleOnShowDetailsClick}
             key={item.ID}
             listItem={item}
-            commentsLength={answersLists.length}
+            commentsLength={answerCommentsCount(+item.ID)}
           />
         ))}
       </main>
