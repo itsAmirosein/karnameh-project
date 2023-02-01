@@ -9,6 +9,13 @@ const initialState: InitialState = {
     name: "",
   },
   questionsLists: [],
+  modalVisibility: false,
+  modalData: {
+    subject: "",
+    description: "",
+  },
+  param:undefined,
+  newAnswerText:''
 };
 
 export const mainSlice = createSlice({
@@ -16,3 +23,15 @@ export const mainSlice = createSlice({
   initialState,
   reducers: ACTIONS,
 });
+
+export const {
+  setDefaultData,
+  setModalState,
+  setModalDescription,
+  setModalSubject,
+  modalSubmit,
+  setParam,
+  setLikeOrDislike,
+  setNewAnswer,
+  setAnswerText
+} = mainSlice.actions;
