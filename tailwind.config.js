@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       colors:{
         'Green':'#27AE60',
-        "smook-1":'#F7F8F9',
-        'smook-2':'#F9F9F9'
+        "smooky-1":'#F7F8F9',
+        'smooky-2':'#F9F9F9'
       },
       fontFamily:{
         Yekan:'Yekan'

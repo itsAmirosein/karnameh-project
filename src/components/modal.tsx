@@ -12,8 +12,8 @@ function Modal({ content, onCancel, onClose, onConfirm, title }: ModalProps) {
           </div>
           <div className="flex items-center">{title}</div>
         </div>
-        <div className="p-4 bg-smook-2">{content}</div>
-        <div className="flex items-center justify-start p-4 bg-smook-2 rounded-lg">
+        <div className="p-4 bg-smooky-2">{content}</div>
+        <div className="flex items-center justify-start p-4 bg-smooky-2 rounded-lg">
           <div className="pr-2">
             <Button
               title={persianTranslate.home.createQuestion}

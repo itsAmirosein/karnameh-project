@@ -14,7 +14,8 @@ const initialState: InitialState = {
     subject: "",
     description: "",
   },
-  param:undefined
+  param:undefined,
+  newAnswerText:''
 };
 
 export const mainSlice = createSlice({
@@ -30,5 +31,7 @@ export const {
   setModalSubject,
   modalSubmit,
   setParam,
-  setLikeOrDislike
+  setLikeOrDislike,
+  setNewAnswer,
+  setAnswerText
 } = mainSlice.actions;

@@ -10,6 +10,12 @@ export const persianTranslate = {
     cancel:'انصراف',
     subject:'موضوع',
     questionText:'متن سوال',
-    answers:'پاسخ ها'
   },
+  answers:{
+    answers:'پاسخ ها',
+    submitYourAnswer:'پاسخ خود را ثبت کنید',
+    writeYourAnswer:'پاسخ خود را بنویسید',
+    asnwerText:'... متن پاسخ',
+    sendAnswer:"ارسال پاسخ"
+  }
 };

@@ -5,6 +5,7 @@ export interface InitialState {
   modalVisibility: boolean;
   modalData: ModalDataType;
   param?: number;
+  newAnswerText?:string
 }
 
 export interface ProfileType {

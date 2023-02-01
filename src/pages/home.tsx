@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sagaActions } from "redux/actions";
 import { InitialState } from "redux/types";
-  import { persianTranslate } from "dictionary/persianTranslate";
+import { persianTranslate } from "dictionary/persianTranslate";
 import ListItems from "components/listItems";
 import Modal from "components/modal";
 import {
@@ -10,14 +10,14 @@ import {
   setModalDescription,
   setModalSubject,
   modalSubmit,
-  setParam
+  setParam,
 } from "redux/reducer";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Home() {
   const { profile, questionsLists, answersLists, modalVisibility, modalData } =
     useSelector((state: InitialState) => state);
-    const params = useParams();
+  const params = useParams();
 
   const navigate = useNavigate();
 
@@ -36,7 +36,9 @@ function Home() {
   const handleOnModalConfirmClick = (
     e: React.MouseEvent<HTMLElement, MouseEvent>
   ) => {
-    dispatch(modalSubmit());
+    dispatch({
+      type: sagaActions.setNewQuestionToServer,
+    });
   };
   const handleOnModalCloseClick = () => {
     dispatch(setModalState(false));
@@ -54,8 +56,8 @@ function Home() {
   };
 
   const handleOnShowDetailsClick = (ID: number) => {
-    dispatch(setParam(+ID))
-    navigate(`/${ID}`)
+    dispatch(setParam(+ID));
+    navigate(`/${ID}`);
   };
 
   const modalContent = (
@@ -77,11 +79,11 @@ function Home() {
 
   return (
     <div className="font-Yekan ">
-      <main className="py-4 px-8 bg-smook-1 h-screen">
+      <main className="py-4 px-8 bg-smooky-1 h-screen">
         {questionsLists?.map((item) => (
           <ListItems
-          questionCart
-          onMoreDetailsClick={handleOnShowDetailsClick}
+            questionCart
+            onMoreDetailsClick={handleOnShowDetailsClick}
             key={item.ID}
             listItem={item}
             commentsLength={answersLists.length}

@@ -5,11 +5,21 @@
         "personImage": "https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg",
         "name": "mohammad karami",
         "text": "you must do smt",
-        "like": 113,
-        "dislike": 32,
+        "like": 115,
+        "dislike": 34,
         "Q_ID": 1,
         "ID": 1,
         "date": "Wed Feb 01 2023 13:57:42 GMT+0330"
+      },
+      {
+        "date": "2023-02-01T14:14:55.802Z",
+        "dislike": 2,
+        "like": 2,
+        "name": "kian hosseini",
+        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7j9IDpZsbq4HghrNPneZustxYupRgrt0oQ&usqp=CAU",
+        "text": "mmm",
+        "ID": 2,
+        "Q_ID": 1
       }
     ],
     "profile": {
@@ -30,13 +40,14 @@
         "text": "مشکل در log in",
         "date": "Wed Feb 01 2023 13:57:42 GMT+0330",
         "ID": 2
+      },
+      {
+        "title": "asss",
+        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7j9IDpZsbq4HghrNPneZustxYupRgrt0oQ&usqp=CAU",
+        "text": "zzz",
+        "date": "2023-02-01T14:27:21.537Z",
+        "ID": 3
       }
-    ],
-    "modalVisibility": false,
-    "modalData": {
-      "subject": "",
-      "description": ""
-    },
-    "param": 1
+    ]
   }
 }

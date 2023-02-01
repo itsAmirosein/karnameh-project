@@ -7,12 +7,16 @@ export const ACTIONS = {
   setModalDescription: handleModalDescription,
   modalSubmit: handleModalSubmit,
   setParam: handleParam,
-  setLikeOrDislike:handleLikeOrDislike
+  setLikeOrDislike: handleLikeOrDislike,
+  setAnswerText: handleAnswertext,
+  setNewAnswer: handleNewAnswer,
 };
 
 export const sagaActions = {
   getDefaultData: "GET_DEFAULT_DATA",
-  setLikeOrDislikeToServer:'SET_LIKE_OR_ISLIKE_TO_SERVER',
+  setLikeOrDislikeToServer: "SET_LIKE_OR_ISLIKE_TO_SERVER",
+  setNewAnswerToServer: "SET_NEW_ANSWER",
+  setNewQuestionToServer:'SET_NEW_QUESTION_TO_SERVER'
 };
 
 function handleDefaultData(state: InitialState, action: ActionTypes) {
@@ -31,15 +35,8 @@ function handleModalSubject(state: InitialState, action: ActionTypes) {
 function handleModalDescription(state: InitialState, action: ActionTypes) {
   state.modalData.description = action.payload;
 }
-function handleModalSubmit(state: InitialState) {
-  const newQuestion: QuestionsType = {
-    title: state.modalData.subject,
-    personImage: state.profile.image,
-    text: state.modalData.description,
-    date: new Date(),
-    ID: state.questionsLists.length + 1,
-  };
-  state.questionsLists.push(newQuestion);
+function handleModalSubmit(state: InitialState, action: ActionTypes) {
+  state.questionsLists = action.payload.questionsLists;
   state.modalData.description = "";
   state.modalData.subject = "";
   state.modalVisibility = false;
@@ -48,6 +45,15 @@ function handleModalSubmit(state: InitialState) {
 function handleParam(state: InitialState, action: ActionTypes) {
   state.param = action.payload;
 }
-function handleLikeOrDislike(state: InitialState, action: ActionTypes) {
- return action.payload 
+
+function handleAnswertext(state: InitialState, action: ActionTypes) {
+  state.newAnswerText = action.payload;
 }
+function handleLikeOrDislike(state: InitialState, action: ActionTypes) {
+  state.answersLists = action.payload.answersLists
+
+}
+function handleNewAnswer(state: InitialState, action: ActionTypes) {  
+  state.answersLists = action.payload.answersLists
+  state.newAnswerText = ''
+  }

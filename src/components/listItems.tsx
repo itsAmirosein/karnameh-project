@@ -21,8 +21,7 @@ function ListItems({
     ID,
     Q_ID,
   } = listItem;
-  console.log(ID,Q_ID,'sssss')
-
+  
   const q_date = () => {
     const convertedDate = new Date(date);
     return {
@@ -71,7 +70,7 @@ function ListItems({
           <img src={personImage} className="w-[32px] h-[32px] rounded-xl" />
         </div>
       </div>
-      <div className="border px-8 py-4 bg-smook-2">
+      <div className="border px-8 py-4 bg-smooky-2">
         <div className="py-1 text-right">{text}</div>
         {questionCart ? (
           onMoreDetailsClick && (
